@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+@font-face {
+  font-family: "zohopuvi-light";
+  src: url(./assets/Zoho-Puvi-Light-d1803fa889e41bf0e8cbb6513a9d43e2.woff)
+    format("truetype");
+}
+@font-face {
+  font-family: "zohopuvi-medium";
+  src: url(./assets/Zoho-Puvi-Medium-63ce939dabb7a62611c66c2f03cd7781.woff)
+    format("truetype");
+}
+@font-face {
+  font-family: "zohopuvi-regular";
+  src: url(./assets/Zoho-Puvi-Regular-2115e13d08dc114dd29d568b411169d9.woff)
+    format("truetype");
+}
+@font-face {
+  font-family: "zb-fonticons";
+  src: url(./assets/zb-fonticons-c967d17367fbf934cb350f399b110444.woff)
+    format("truetype");
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 700px;
+    margin: 50px auto;
+  }
+}
+.modal-backdrop.show {
+  opacity: 0.3;
+}
+body {
+  background-color: #fff;
+  width: 100%;
+  height: calc(100vh - 30px);
+  position: absolute;
+  counter-reset: section;
+  color: #111;
+}

@@ -1,0 +1,28 @@
+{
+  "customers": [
+    {
+      "name": "4543",
+      "email": "345345",
+      "type": "Guest",
+      "revenue": "0.00",
+      "phone": "+84345345",
+      "id": 7
+    },
+    {
+      "name": "34543",
+      "email": "435435",
+      "type": "Guest",
+      "revenue": "0.00",
+      "phone": "+8434534",
+      "id": 8
+    },
+    {
+      "name": "4353",
+      "email": "34543",
+      "type": "Guest",
+      "revenue": "0.00",
+      "phone": "+84",
+      "id": 9
+    }
+  ]
+}

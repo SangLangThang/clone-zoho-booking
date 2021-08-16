@@ -1,0 +1,101 @@
+<div class="modal-container">
+  <div class="modal-header">
+    <fa-icon [icon]="faPlus" class="modal-icon-add"></fa-icon>
+    <span class="modal-title">Add New Customer</span>
+    <fa-icon
+      [icon]="faTimes"
+      class="modal-icon-cancel"
+      aria-label="Close"
+      (click)="onClose()"
+    ></fa-icon>
+  </div>
+
+  <div class="modal-body">
+    <form
+      action=""
+      class="form"
+      (ngSubmit)="onSubmit()"
+      [formGroup]="addCustomer"
+    >
+      <div class="form-item">
+        <label class="form-label required" for="">Customer's Name</label>
+        <input
+          class="form-input"
+          type="text"
+          placeholder="Enter name"
+          formControlName="name"
+          [ngClass]="{
+            error: isFieldValid('name')
+          }"
+        />
+        <div
+          class="form-error"
+          *ngIf="
+            addCustomer.get('name')?.errors && addCustomer.get('name')?.touched
+          "
+        >
+          Hold on.You can't leave this empty
+        </div>
+      </div>
+      <div class="form-item">
+        <label class="form-label" for="">Email Address</label>
+        <input
+          class="form-input"
+          type="text"
+          placeholder="Enter email"
+          formControlName="email"
+        />
+        
+        <div
+          class="form-error"
+          *ngIf="
+            addCustomer.get('email')?.errors &&
+            addCustomer.get('email')?.touched
+          "
+        >
+          Hold on.You can't leave this empty
+        </div>
+      </div>
+      <fieldset class="form-item" formGroupName="phone">
+        <label class="form-label" for="">Contact Number</label>
+        <div class="form-group">
+          <div class="selected-flag-container" (click)="toggleSelect()">
+            <div class="selected-flag">
+              <div
+                class="selected-flag-img iti-flag"
+                [ngClass]="select.tag"
+              ></div>
+              <div class="selected-flag-dial-code">{{ select.code }}</div>
+              <div class="selected-flag-icon"></div>
+            </div>
+          </div>
+          <select formControlName="code" class="select-hide">
+            <option [value]="select.code">hide</option>
+          </select>
+          <ul class="country-list" *ngIf="showSelect">
+            <li
+              class="country"
+              *ngFor="let country of listsCountry"
+              (click)="onSelect(country)"
+            >
+              <div class="country-img iti-flag" [ngClass]="country.tag"></div>
+              <span class="country-name">{{ country.name }}</span>
+              <span class="country-dial-code">{{ country.code }}</span>
+            </li>
+          </ul>
+          <input type="text" formControlName="mobile" />
+        </div>
+      </fieldset>
+      <div class="form-item">
+        <label class="form-label" for=""></label>
+        <div class="group-btn">
+          <button type="submit" class="btn btn-save">Save</button>
+          <button type="button" class="btn btn-cancel" (click)="onClose()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+    {{ this.addCustomer.get("name")?.valid }}
+  </div>
+</div>

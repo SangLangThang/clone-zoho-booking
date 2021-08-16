@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="header">
+    <div class="header__logo">
+      <a href="#">
+        <img src="../../../assets/logo.svg" alt="" class="header__logo-img" />
+      </a>
+      <p class="header__logo-title">Bookings</p>
+    </div>
+
+    <div class="header__menu">
+      <ul>
+        <li><a routerLink="/calender" routerLinkActive="active-link" class="header__menu-item">Calender</a></li>
+      </ul>
+      <ul>
+        <li><a routerLink="/report" routerLinkActive="active-link" class="header__menu-item">Report</a></li>
+      </ul>
+      <ul>
+        <li><a routerLink="/customers" routerLinkActive="active-link" class="header__menu-item">Customers</a></li>
+      </ul>
+      <ul>
+        <li><a routerLink="/profile" routerLinkActive="active-link" class="header__menu-item">My Profile</a></li>
+      </ul>
+    </div>
+    <div class="header__avatar">
+      <div class="header__avatar-title">
+        <fa-icon [icon]="faMousePointer"></fa-icon>
+        <span> Booking Page</span>
+      </div>
+      <div class="header__avatar-content">
+        <ul class="header__avatar-icons">
+          <li>
+            <fa-icon [icon]="faCog" class="header__avatar-icons-icon" ngbTooltip="Tooltip on left"></fa-icon>
+          </li>
+          <li>
+            <fa-icon
+              [icon]="faPlus"
+              class="header__avatar-icons-icon"
+            ></fa-icon>
+          </li>
+          <li>
+            <fa-icon
+              [icon]="faBell"
+              class="header__avatar-icons-icon"
+            ></fa-icon>
+          </li>
+        </ul>
+        <div class="header__avatar-img">
+          <img src="../../../assets/avatar.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

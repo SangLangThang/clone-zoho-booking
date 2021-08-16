@@ -1,0 +1,122 @@
+$color-gray: #b1b0cb;
+$color-select: #4f4790;
+$color-background: #50477f;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: $color-gray;
+}
+ul,
+li {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+  object-fit: fill;
+}
+.container {
+  width: 100%;
+}
+.header {
+  background: #50497f;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100000;
+  height: 50px;
+  display: flex;
+  width: 100%;
+  
+  &__logo {
+    width: 15%;
+    margin-left: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: fl;
+    &-img {
+      width: 24px;
+      height: 24px;
+    }
+    &-title {
+      color: white;
+      font-family: zohopuvi-medium;
+      font-size: 16px;
+      margin-left: 7px;
+    }
+  }
+  &__menu {
+    display: flex;
+    &-item {
+      white-space: nowrap;
+      font-family: zohopuvi-regular;
+      margin: 0;
+      font-size: 13px;
+      padding: 17px 15px 15px 16px;
+      position: relative;
+      transform: translateZ(0);
+      display: inline-block;
+      cursor: pointer;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  &__avatar {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+    &-title {
+      white-space: nowrap;
+      font-family: zohopuvi-regular;
+      margin: 0;
+      font-size: 13px;
+      padding: 17px 15px 15px 16px;
+      position: relative;
+      transform: translateZ(0);
+      display: inline-block;
+      cursor: pointer;
+      color: #b1b0cb;
+    }
+    &-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-icons {
+      display: flex;
+      border-left: 1px solid #b1b0cb;
+      &-icon {
+        color: #b1b0cb;
+        margin: 0px 10px;
+        cursor: pointer;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+    &-img {
+      width: 27px;
+      height: 27px;
+      border: 50%;
+      cursor: pointer;
+    }
+  }
+}
+.active-link {
+  color: #fff;
+  background: #4a4375;
+  &:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #f84f7b;
+  }
+}

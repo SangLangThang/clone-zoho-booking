@@ -1,0 +1,97 @@
+<div class="customers__container">
+  <!-- customer count -->
+  <div class="customers__count">
+    <div class="customers__count-item">
+      <p class="customers__count-item-number">{{ count.register }}</p>
+      <p class="customers__count-item-name">Register</p>
+    </div>
+    <div class="customers__count-item">
+      <p class="customers__count-item-number">{{ count.guest }}</p>
+      <p class="customers__count-item-name">Guest</p>
+    </div>
+    <div class="customers__count-item">
+      <p class="customers__count-item-number">{{ count.total }}</p>
+      <p class="customers__count-item-name">Total</p>
+    </div>
+  </div>
+  <!-- customer lists -->
+  <div class="customers__lists">
+    <div class="customers__lists-content">
+      <span class="customers__lists-list">Name</span>
+      <span class="customers__lists-list">Email Address</span>
+      <span class="customers__lists-list">Phone</span>
+      <span class="customers__lists-list w20">Type</span>
+      <span class="customers__lists-list w20">Revenue</span>
+      <div class="customers__lists-actions">
+        <div class="customers__lists-action-search" (click)="toggleSearch()">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </div>
+        <div class="customers__lists-action-add" (click)="openModalForm()">
+          <fa-icon [icon]="faPlus"></fa-icon>
+        </div>
+      </div>
+    </div>
+    <!-- customer list input-->
+    <div class="divider">
+      <div class="customers__lists-inputs" [ngClass]="{ show: showSearch }">
+        <input
+          type="search"
+          class="customers__lists-input"
+          placeholder="Search by customer name or contact details."
+          [formControl]="searchControl"
+        />
+
+        <div class="customers__lists-actions" (click)="toggleSearch()">
+          <div class="customers__lists-action-cancel">
+            <fa-icon [icon]="faTimes"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- customer list sort-->
+  <div class="customers__lists-sort">
+    <div class="customers__lists-sort-content">
+      <span class="customers__lists-sort-title">Sort by:</span>
+      <div class="customers__lists-sort-dropdown">
+        <span class="customers__lists-sort-dropdown-label"
+          >Recently Scheduled
+          <span class="customers__lists-sort-dropdown-icon"> </span>
+        </span>
+        <ul class="customers__lists-sort-dropdown-options">
+          <li data-ember-action="" data-ember-action-1122="1122">Name</li>
+          <li data-ember-action="" data-ember-action-1123="1123">
+            Last modified
+          </li>
+          <li data-ember-action="" data-ember-action-1124="1124">Last added</li>
+          <li data-ember-action="" data-ember-action-1125="1125">
+            Recently Scheduled
+          </li>
+          <li data-ember-action="" data-ember-action-1126="1126">Type</li>
+          <li data-ember-action="" data-ember-action-1127="1127">
+            No Of Visits
+          </li>
+          <li data-ember-action="" data-ember-action-1128="1128">
+            Last Visited
+          </li>
+          <li data-ember-action="" data-ember-action-1129="1129">Revenue</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- customer list view -->
+
+  <div class="customers__view-content" *ngFor="let customer of customers">
+    <span class="customers__view-item"
+      ><img
+        src="../../../assets/avatar.svg"
+        alt=""
+        class="customers__view-logo"
+      />{{ customer.name }}</span
+    >
+    <span class="customers__view-item">{{ customer.email }}</span>
+    <span class="customers__view-item">{{ customer.phone }}</span>
+    <span class="customers__view-item w20">{{ customer.type }}</span>
+    <span class="customers__view-item w20">₫{{ customer.revenue }}</span>
+  </div>
+</div>

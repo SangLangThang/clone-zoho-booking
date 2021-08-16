@@ -1,0 +1,271 @@
+@import "../flag/flag.component.scss";
+@keyframes createBox {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.modal {
+  &-content {
+    width: 700px;
+    min-width: 320px;
+    z-index: 999;
+    border-radius: 20px;
+    background: #f7f8f9;
+    box-shadow: 0 20px 50px rgb(98 90 146 / 40%);
+    top: 50px;
+  }
+  &-title {
+    color: #111;
+    font-family: zohopuvi-medium;
+    font-size: 15px;
+  }
+  &-header {
+    background: #fff;
+    border-bottom: 1px solid #ececec;
+    border-radius: 20px 20px 0 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  &-body {
+    background: #f7f8f9;
+  }
+  &-icon {
+    &-add {
+      background: #d0c952;
+      border: 2px solid #d0c952;
+      box-shadow: -5px 5px 15px rgb(208 201 82 / 40%);
+      font-size: 10px;
+      height: 28px;
+      line-height: 25px;
+      text-align: center;
+      width: 28px;
+      color: #fff;
+      transition: all ease 0.3s;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    &-cancel {
+      margin-left: auto;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+}
+.form {
+  width: 80%;
+  margin: auto;
+  &-item {
+    margin-bottom: 15px;
+    width: 100%;
+    position: relative;
+  }
+  &-label {
+    width: 30%;
+    color: #666;
+    font-size: 14px;
+    font-family: zohopuvi-regular;
+    position: relative;
+    &.required {
+      &::after {
+        content: "*";
+        color: #fe5959;
+        position: absolute;
+      }
+    }
+  }
+  &-input {
+    width: 60%;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    box-sizing: border-box;
+    color: #111;
+    display: inline-block;
+    font-size: 13px;
+    padding: 12px 10px;
+    transition: box-shadow 0.1s ease-in 0s;
+    outline: none;
+    line-height: 15px;
+    position: relative;
+    
+    &:focus {
+      border: 1px solid #8e8dbe;
+      box-shadow: 0 0 10px rgb(82 81 143 / 19%);
+    }
+    &.error {
+      border: 1px solid #e85f5f !important;
+      &:focus + .form-error {
+        animation: createBox .25s;
+        visibility: visible;
+      }
+    }
+    &:hover {
+      border: 1px solid #b9b9e6;
+    }
+  }
+  &-error {
+    position: absolute;
+    top: 130%;
+    left: 30%;
+    min-width: 20%;
+    z-index: 300;
+    padding: 5px 10px;
+    font-size: 12px;
+    color: white;
+    background-color: #e85f5f;
+    visibility: hidden;
+    border-radius: 5px;
+    &::after {
+      position: absolute;
+      content: "";
+      top: -5px;
+      left: 10px;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-bottom: 7px solid #e85f5f;
+     
+    }
+  }
+  &-group {
+    width: 60%;
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    & input {
+      width: 100%;
+      border: 1px solid #e1e1e1;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: #111;
+      display: inline-block;
+      font-size: 13px;
+      padding: 12px 10px;
+      transition: box-shadow 0.1s ease-in 0s;
+      outline: none;
+      line-height: 15px;
+      padding-left: 100px;
+      &:focus {
+        border: 1px solid #8e8dbe;
+        box-shadow: 0 0 10px rgb(82 81 143 / 19%);
+      }
+      &:hover {
+        border: 1px solid #b9b9e6;
+      }
+    }
+  }
+}
+.group-btn {
+  display: inline-block;
+  min-height: 80px;
+  margin: 15px 0px;
+}
+
+.btn {
+  color: #fff;
+  transition: all ease 0.4s;
+  min-width: 90px;
+  white-space: nowrap;
+  font-family: zohopuvi-medium;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-cancel {
+  border: 1px solid #e4e4e4;
+  background: #f5f5f5;
+  color: #666;
+  border-radius: 2px;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+.btn-save {
+  background: #625a92;
+  border: 1px solid #514a7b;
+  box-shadow: -5px 5px 9px rgb(0 0 0 / 15%);
+  border-radius: 2px;
+  padding: 10px 15px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.selected-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1px;
+    display: flex;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &-img {
+    background-image: url(../../../assets/flag.png);
+    box-shadow: 0 0 1px 0 #888;
+    background-position: -5434px 0;
+    width: 20px;
+    height: 14px;
+  }
+  &-dial-code {
+    margin-left: 6px;
+  }
+  &-icon {
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #555;
+  }
+}
+.country-list {
+  position: absolute;
+  left: 0%;
+  top: 42px;
+  z-index: 2;
+  list-style: none;
+  text-align: left;
+  padding: 0;
+  box-shadow: 0 -2px 8px 0 rgb(142 142 142 / 24%);
+
+  background-color: #fff;
+  white-space: nowrap;
+  max-height: 200px;
+  width: 135%;
+  overflow-y: scroll;
+
+  -webkit-overflow-scrolling: touch;
+}
+.country {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  &-img {
+    background-image: url(../../../assets/flag.png);
+    box-shadow: 0 0 1px 0 #888;
+    background-position: -5434px 0;
+    width: 20px;
+    height: 14px;
+    margin-right: 6px;
+  }
+  &-dial-code {
+    margin-left: 6px;
+    color: #999;
+  }
+}
+.select-hide {
+  display: none;
+}

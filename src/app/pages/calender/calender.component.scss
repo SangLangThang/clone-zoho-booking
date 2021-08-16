@@ -1,0 +1,12 @@
+.calender__container{
+    height: calc(100% - 50px);
+    width: 100%;
+    overflow-y: scroll;
+    position: absolute;
+    background: #F7F8F9;
+    top: 53px;
+
+
+    font-size: 30px;
+    text-align: center;
+}
